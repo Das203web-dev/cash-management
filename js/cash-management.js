@@ -10,13 +10,13 @@ function parsingInput(id) {
         return expensesValueParse;
     }
 }
-//function for converting text to float
-// function textToParseInt(id) {
-//     const textId = document.getElementById(id)
-//     const textInnerText = textId.innerText;
-//     const innerTextToParse = parseFloat(textInnerText);
-//     return innerTextToParse;
-// }
+// function for converting text to float
+function textToParseInt(id) {
+    const textId = document.getElementById(id)
+    const textInnerText = textId.innerText;
+    const innerTextToParse = parseFloat(textInnerText);
+    return innerTextToParse;
+}
 
 document.getElementById('calculate-button').addEventListener('click', function () {
     const incomeInput = parsingInput('income-input-field');
@@ -49,14 +49,14 @@ document.getElementById('save-button').addEventListener('click', function () {
     console.log('clicked')
     const saveInputField = parsingInput('save-input-field');
     console.log(saveInputField);
-    const updateBalance = document.getElementById('balance');
-    const updateBalanceText = updateBalance.innerText;
-    const parseupBalanace = parseFloat(updateBalanceText);
-    console.log(updateBalance)
-    const savings = parseupBalanace * (saveInputField / 100)
+    const updateBalance = textToParseInt('balance');
+    // const updateBalanceText = updateBalance.innerText;
+    // const parseupBalanace = parseFloat(updateBalanceText);
+    // console.log(updateBalance)
+    const savings = updateBalance * (saveInputField / 100)
     console.log(savings);
     const savingAmount = document.getElementById('saving-amount');
     savingAmount.innerText = savings;
     const remainingBalance = document.getElementById('remaining-balance');
-    remainingBalance.innerText = parseupBalanace - savingAmount;
+    remainingBalance.innerText = updateBalance - savings;
 })
