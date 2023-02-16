@@ -4,6 +4,12 @@ function parsingInput(id) {
     const expensesValue = expenses.value;
     if (isNaN(expensesValue)) {
         expenses.value = 'please input number', id;
+
+        //if any error occur the input field will be empty after click
+        document.getElementById(id).addEventListener('click', function () {
+            const inputFields = document.getElementById(id);
+            inputFields.value = '';
+        })
     }
     else {
         const expensesValueParse = parseFloat(expensesValue);
@@ -50,13 +56,16 @@ document.getElementById('save-button').addEventListener('click', function () {
     const saveInputField = parsingInput('save-input-field');
     console.log(saveInputField);
     const updateBalance = textToParseInt('balance');
-    // const updateBalanceText = updateBalance.innerText;
-    // const parseupBalanace = parseFloat(updateBalanceText);
-    // console.log(updateBalance)
     const savings = updateBalance * (saveInputField / 100)
     console.log(savings);
     const savingAmount = document.getElementById('saving-amount');
-    savingAmount.innerText = savings;
-    const remainingBalance = document.getElementById('remaining-balance');
-    remainingBalance.innerText = updateBalance - savings;
+
+    if (savings > updateBalance) {
+        savingAmount.innerText = 'remaining balance limit over';
+    }
+    else {
+        savingAmount.innerText = savings;
+        const remainingBalance = document.getElementById('remaining-balance');
+        remainingBalance.innerText = updateBalance - savings;
+    }
 })
