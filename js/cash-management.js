@@ -37,7 +37,7 @@ document.getElementById('calculate-button').addEventListener('click', function (
 
     //handeling total expenses section error
     if (isNaN(totalExpenses)) {
-        expensesTotal.innerText = 'Please use numbers inside inputs';
+        expensesTotal.innerText = 'Wrong input';
         foodExpensesInput = '';
     }
     else {
@@ -62,7 +62,7 @@ document.getElementById('save-button').addEventListener('click', function () {
     const savingAmount = document.getElementById('saving-amount');
 
     if (savings > updateBalance) {
-        savingAmount.innerText = 'you cant save more then you have';
+        savingAmount.innerText = 'Balance Limit Over';
         const inputField = document.getElementById('save-input-field');
         inputField.value = '';
     }
