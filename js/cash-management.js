@@ -26,9 +26,11 @@ document.getElementById('calculate-button').addEventListener('click', function (
     const totalExpenses = foodExpensesInput + rentExpensesInput + clothsExpensesInput;
     const expensesTotal = document.getElementById('total-expenses');
     const balance = document.getElementById('balance');
+
     //handeling total expenses section error
     if (isNaN(totalExpenses)) {
         expensesTotal.innerText = 'Please use numbers inside inputs';
+        foodExpensesInput = '';
     }
     else {
         expensesTotal.innerText = totalExpenses;
@@ -42,6 +44,19 @@ document.getElementById('calculate-button').addEventListener('click', function (
     else {
         balance.innerText = balanceafterExpenses;
     }
-
-
+})
+document.getElementById('save-button').addEventListener('click', function () {
+    console.log('clicked')
+    const saveInputField = parsingInput('save-input-field');
+    console.log(saveInputField);
+    const updateBalance = document.getElementById('balance');
+    const updateBalanceText = updateBalance.innerText;
+    const parseupBalanace = parseFloat(updateBalanceText);
+    console.log(updateBalance)
+    const savings = parseupBalanace * (saveInputField / 100)
+    console.log(savings);
+    const savingAmount = document.getElementById('saving-amount');
+    savingAmount.innerText = savings;
+    const remainingBalance = document.getElementById('remaining-balance');
+    remainingBalance.innerText = parseupBalanace - savingAmount;
 })
