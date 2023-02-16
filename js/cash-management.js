@@ -16,6 +16,7 @@ function parsingInput(id) {
         return expensesValueParse;
     }
 }
+
 // function for converting text to float
 function textToParseInt(id) {
     const textId = document.getElementById(id)
@@ -24,6 +25,7 @@ function textToParseInt(id) {
     return innerTextToParse;
 }
 
+//calculate button event
 document.getElementById('calculate-button').addEventListener('click', function () {
     const incomeInput = parsingInput('income-input-field');
     const foodExpensesInput = parsingInput('food-input-field');
@@ -51,17 +53,18 @@ document.getElementById('calculate-button').addEventListener('click', function (
         balance.innerText = balanceafterExpenses;
     }
 })
+
+//save button event
 document.getElementById('save-button').addEventListener('click', function () {
-    console.log('clicked')
-    const saveInputField = parsingInput('save-input-field');
-    console.log(saveInputField);
+    let saveInputField = parsingInput('save-input-field');
     const updateBalance = textToParseInt('balance');
     const savings = updateBalance * (saveInputField / 100)
-    console.log(savings);
     const savingAmount = document.getElementById('saving-amount');
 
     if (savings > updateBalance) {
-        savingAmount.innerText = 'remaining balance limit over';
+        savingAmount.innerText = 'you cant save more then you have';
+        const inputField = document.getElementById('save-input-field');
+        inputField.value = '';
     }
     else {
         savingAmount.innerText = savings;
