@@ -1,0 +1,140 @@
+.head-title {
+    color: #31A5AC;
+    font-weight: 700;
+}
+
+.icon {
+    background-color: yellow;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.pic {
+    height: 100%;
+    width: 100%;
+}
+
+.income-div {
+    background-color: #F8F8F8;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+/* .input-div {
+    margin-left: 15px;
+} */
+
+.form {
+    display: table;
+    padding: 20px;
+}
+
+.form>p {
+    display: table-row;
+}
+
+.input-para {
+    margin-bottom: 30px;
+}
+
+.form>p>label {
+    display: table-cell;
+}
+
+.form>p>input {
+    display: table-cell;
+    background-color: #DCDCDC;
+    margin-bottom: 15px;
+}
+
+.calculate-btn {
+    background-color: #59A5FF;
+    padding: 7px 35px;
+    font-weight: 700;
+    font-size: 20px;
+    color: white;
+    align-self: center;
+}
+
+.saving-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#save-input-field {
+    width: 50px;
+    /* height: 30px; */
+    padding: 7px 45px;
+    background-color: #DCDCDC;
+    margin-left: 10px;
+}
+
+.save-btn {
+    background-color: #59A5FF;
+    padding: 5px 35px;
+    font-weight: 700;
+    font-size: 20px;
+    color: white;
+    align-self: center;
+}
+
+@media only screen and (min-width: 1200px) {
+    .img-div {
+        width: 50%;
+        height: 620px;
+    }
+
+    .form-div {
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    header {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .head-title {
+        color: #31A5AC;
+        font-weight: 700;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    /* .icon {
+        background-color: yellow;
+        padding: 5px;
+        border-radius: 20px;
+        height: 35px;
+        width: 35px;
+    } */
+
+    .img-div {
+        width: 100%;
+    }
+
+    .form-div {
+        width: 100%;
+    }
+
+    .form {
+        display: block;
+        padding: 5px;
+    }
+
+    .form>p>label {
+        display: block;
+    }
+
+    .saving-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
