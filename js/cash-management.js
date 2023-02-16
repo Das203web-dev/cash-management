@@ -36,8 +36,8 @@ document.getElementById('calculate-button').addEventListener('click', function (
 
     //handeling balance section error
     const balanceafterExpenses = incomeInput - totalExpenses;
-    if (isNaN(balanceafterExpenses)) {
-        balance.innerText = '0';
+    if (isNaN(balanceafterExpenses) == true || incomeInput < totalExpenses) {
+        balance.innerText = 'LImit Over or wrong input';
     }
     else {
         balance.innerText = balanceafterExpenses;
